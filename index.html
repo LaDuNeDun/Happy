@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy Birthday</title>
+   <link rel="stylesheet" href="./style.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
+<body>
+  <label for="open">
+<input id="open" type="checkbox"/>
+<div class="card pg1">
+    <div class="h">To</div>
+    <div class="bd">Amara</div>
+    <div class="click">Click Here</div>
+  </div>
+   <div class="card pg2"> 
+  <div class="content">
+    <img class="birthday" src="https://cdn.pixabay.com/photo/2020/10/06/21/54/cake-5633461__480.png"/>
+    <div class="candle">
+      <div class="flame"></div>
+    </div>
+  </div>
+</div>
+
+<div class="card pg3">
+  <div class="content">
+    <div class="wish"><br>Happy Birthday, Ace!
+      <br><br>Semoga dihari yang spesial ini, segala harapan dan doa terbaik kamu terkabul.
+      <br>Semoga kamu selalu diberikan kesehatan, kebahagiaan, dan kesuksesan dalam hidupmu.
+<br> <br> From 
+Rizki
+    </div>
+    </div>
+  </div>
+
+<div class="stars">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+<div class="shooting-stars"></div>
+
+  </label>
+
+</body>
+<script>
+function createShootingStar() {
+  const container = document.querySelector('.shooting-stars');
+  const star = document.createElement('span');
+  star.classList.add('shooting-star');
+  // Random posisi horizontal (left) dan vertical (top)
+  star.style.left = Math.random() * 100 + 'vw';
+  star.style.top = Math.random() * 60 + 'vh';
+  // Random panjang bintang
+  star.style.height = (60 + Math.random() * 60) + 'px';
+  // Random delay animasi
+  star.style.animationDelay = (Math.random() * 0.5) + 's';
+  container.appendChild(star);
+
+  // Hapus elemen setelah animasi selesai
+  star.addEventListener('animationend', () => {
+    star.remove();
+  });
+}
+
+// Buat bintang jatuh
+setInterval(createShootingStar, 700);
+</script>
+</html>
